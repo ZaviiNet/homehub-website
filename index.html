@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeHub Innovations Ltd - Smart Home & Energy Solutions</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        /* --- Global Styles & Variables --- */
+        :root {
+            --primary-color: #0d6efd; /* A nice, modern blue */
+            --light-blue-bg: #e7f5ff;
+            --dark-text: #333;
+            --light-text: #f8f9fa;
+            --section-padding: 60px 0;
+            --border-radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            color: #2c3e50;
+        }
+        
+        section {
+            padding: var(--section-padding);
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+        }
+
+        /* --- Navigation Bar --- */
+        .navbar {
+            background: #ffffff;
+            color: var(--dark-text);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .navbar .logo i {
+            margin-right: 8px;
+        }
+
+        .navbar nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar nav ul li {
+            margin-left: 25px;
+        }
+
+        .navbar nav ul li a {
+            color: var(--dark-text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .navbar nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* --- Hero Section --- */
+        #home {
+            background: linear-gradient(rgba(13, 110, 253, 0.1), rgba(13, 110, 253, 0.1)), url('https://images.unsplash.com/photo-1604014237800-1c9102c219da?q=80&w=2070') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding-top: 80px; /* Offset for fixed navbar */
+        }
+        
+        .hero-content {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            border-radius: var(--border-radius);
+        }
+
+        #home h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        #home p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        
+        .btn:hover {
+            background-color: #0b5ed7;
+            transform: translateY(-2px);
+        }
+        
+        /* --- About Section --- */
+        #about {
+            background: var(--light-blue-bg);
+        }
+        
+        #about .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        #about .about-text {
+            flex: 1;
+        }
+        
+        #about .about-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        #about .about-image i {
+            font-size: 12rem;
+            color: var(--primary-color);
+            opacity: 0.8;
+        }
+
+        /* --- Services Section --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .service-card .icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+        }
+
+        /* --- Contact Section --- */
+        #contact {
+            background: var(--light-blue-bg);
+            text-align: center;
+        }
+        
+        #contact p {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            font-size: 1.1rem;
+        }
+        
+        .contact-email {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark-text);
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .contact-email:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+        
+        .contact-email i {
+            margin-right: 10px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #2c3e50;
+            color: var(--light-text);
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        /* --- Responsive Design --- */
+        @media(max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            
+            .navbar .container {
+                flex-direction: column;
+            }
+            .navbar nav ul {
+                margin-top: 10px;
+                padding: 10px;
+                background: #f8f9fa;
+                border-radius: var(--border-radius);
+            }
+            .navbar nav ul li { margin: 0 10px; }
+            
+            #home {
+                height: auto;
+                padding-top: 150px; /* More padding for taller mobile nav */
+                padding-bottom: 60px;
+            }
+            
+            #about .about-content {
+                flex-direction: column;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="#home" class="logo"><i class="fas fa-home"></i> HOMEHUB INNOVATIONS</a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="hero-content">
+            <h1>Smart Living, Simplified.</h1>
+            <p>Your all-in-one solution for seamless smart home integration and sustainable energy.</p>
+            <a href="#services" class="btn">Discover Our Solutions</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About HomeHub Innovations</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>At HOMEHUB INNOVATIONS LTD, our mission is to eliminate the complexity of modern living. We saw a world cluttered with countless hubs, devices, and apps, creating confusion instead of convenience. We decided to build a better way.</p>
+                    <p>Our philosophy is simple: technology should work for you, effortlessly. By integrating state-of-the-art smart home control with forward-thinking renewable energy solutions, we provide a single, reliable point of contact for creating truly intelligent, efficient, and sustainable spaces for both residential and commercial clients.</p>
+                </div>
+                <div class="about-image">
+                    <i class="fas fa-brain"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>What We Provide</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-sitemap"></i></div>
+                    <h3>The HomeHub Smart Hub</h3>
+                    <p>The heart of your smart building. Our AIO hub replaces all others, creating a unified network for all your devices. Enjoy a single, intuitive app on your phone, tablet, or our integrated touch panel. No more app-switching, just seamless control.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-car-battery"></i></div>
+                    <h3>Battery & Inverter Systems</h3>
+                    <p>Secure your energy independence. We design and install high-capacity battery and inverter systems for homes and businesses, allowing you to store excess energy from the grid or renewables and use it whenever you need it.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-wind"></i></div>
+                    <h3>Wind Turbine Installation</h3>
+                    <p>Harness the power of nature. Our team provides professional installation of residential and commercial wind turbines, offering a powerful, sustainable source of clean energy to reduce your carbon footprint and energy bills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Ready to simplify your smart home or explore renewable energy solutions? Reach out to our team today for a no-obligation consultation. We're here to help you build a smarter, more sustainable future.</p>
+                <a href="mailto:Jack@HomeHubInnovations.co.uk" class="contact-email">
+                    <i class="fas fa-envelope"></i> Jack@HomeHubInnovations.co.uk
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 HOMEHUB INNOVATIONS LTD. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
